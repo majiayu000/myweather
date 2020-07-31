@@ -41,6 +41,6 @@ jobs:
           # Read file contents as body:
           body: file://result.html
           to: 1835304752@qq.com
-          from: GitHub Actions
+          from: 今日天气
           content_type: text/html
         
