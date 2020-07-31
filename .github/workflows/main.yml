@@ -34,7 +34,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${mylifcc@gmail.com}
-          password: ${majiayu000}
+          password: ${dcqkinjtvtutfuyv}
           subject: Shanghai Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
           to: 183534752@qq.com
