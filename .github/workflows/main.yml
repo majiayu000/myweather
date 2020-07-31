@@ -26,8 +26,17 @@ jobs:
     - name: Run a one-line script
       run: bash ./weather.sh
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: 'Get Date'
+      run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
+    - name: 'Send mail'
+      uses: dawidd6/action-send-mail@master
+      with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ mylifcc@gmail.com }}
+          password: ${{ majiayu000 }}
+          subject: Shanghai Weather Report (${{env.REPORT_DATE}})
+          body: file://result.html
+          to: 183534752@qq.com
+          from: GitHub Actions
+          content_type: text/html
