@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           subject: HeBei Weather Report (${{env.REPORT_DATE}})
           # Literal body:
-          body: Build job of ${{github.repository}} completed successfully!
+   
           # Read file contents as body:
           body: file://result.html
           to: 1835304752@qq.com
