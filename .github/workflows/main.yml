@@ -36,7 +36,11 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }}
           subject: HeBei Weather Report (${{env.REPORT_DATE}})
+          # Literal body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Read file contents as body:
           body: file://result.html
           to: 1835304752@qq.com
           from: GitHub Actions
           content_type: text/html
+          attachments: attachments.zip,git.diff,./dist/static/main.js:  
