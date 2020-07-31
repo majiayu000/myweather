@@ -33,10 +33,10 @@ jobs:
       with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${mylifcc@gmail.com}
-          password: ${dcqkinjtvtutfuyv}
-          subject: Shanghai Weather Report (${{env.REPORT_DATE}})
+          username: ${{ secrets.USERNAME }} 
+          password: ${{ secrets.PASSWORD }}
+          subject: HeBei Weather Report (${{env.REPORT_DATE}})
           body: file://result.html
-          to: 183534752@qq.com
+          to: 1835304752@qq.com
           from: GitHub Actions
           content_type: text/html
