@@ -10,6 +10,6 @@ UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Ge
 
 curl \
   -H "Accept-Language: $LANGUAGE" \
-  
+  -H "User-Agent: $UA" \
   -o result.html \
   wttr.in/$CITY
