@@ -43,4 +43,4 @@ jobs:
           to: 1835304752@qq.com
           from: GitHub Actions
           content_type: text/html
-          attachments: attachments.zip,git.diff,./dist/static/main.js:  
+          attachments: attachments.zip,git.diff,./dist/static/main.js 
