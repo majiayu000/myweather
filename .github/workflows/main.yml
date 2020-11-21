@@ -29,7 +29,7 @@ jobs:
       run: bash ./weather.sh
 
     - name: 'Get Date'
-      run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
+      run: echo "{name}={REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')}" >> $GITHUB_ENV
     - name: 'Send mail'
       uses: dawidd6/action-send-mail@v2
       with:
