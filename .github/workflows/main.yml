@@ -37,7 +37,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }}
-          subject: HeBei Weather Report (${{env.REPORT_DATE}})
+          subject: HeBei Weather Report (${{GITHUB_ENV.REPORT_DATE}})
           # Literal body:
    
           # Read file contents as body:
