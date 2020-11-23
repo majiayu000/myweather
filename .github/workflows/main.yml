@@ -27,11 +27,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: bash ./weather.sh
-    - name: Set Timezone
-      uses: szenius/set-timezone@v1.0
+    - name: Setup timezone
+      uses: zcong1993/setup-timezone@master
+      id: cutime
       with:
-        timezoneLinux: "Asia/Singapore"
-    
+        timezone: Asia/Shanghai
     - name: Get current time
       uses: gerred/actions/current-time@master
       id: current-time
@@ -41,7 +41,7 @@ jobs:
     - name: 'Send mail'
       uses: dawidd6/action-send-mail@v2.2.3
       env:
-        REPORT_DATE: "${{ steps.current-time.outputs.time }}"
+        REPORT_DATE: "${{ steps.cutime.time }}"
       with:
           server_address: smtp.gmail.com
           server_port: 587
