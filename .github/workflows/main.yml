@@ -27,17 +27,18 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: bash ./weather.sh
+    
 
     - name: 'Get Date'
-      run: echo "{name}={$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')}" 
+      run: echo name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
     - name: 'Send mail'
-      uses: dawidd6/action-send-mail@v2
+      uses: dawidd6/action-send-mail@v2.2.3
       with:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }}
-          subject: HeBei Weather Report (${{name}})
+          subject: HeBei Weather Report (${{REPORT_DATE}})
           # Literal body:
    
           # Read file contents as body:
