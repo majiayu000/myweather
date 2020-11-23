@@ -34,13 +34,13 @@ jobs:
     - name: 'Send mail'
       uses: dawidd6/action-send-mail@v2.2.3
       env:
-        REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')
+        REPORT_DATE: $(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')
       with:
           server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }}
-          subject: HeBei Weather Report (${{env.REPORT_DATE}})
+          subject: HeBei Weather Report (${{GITHUB_ENV.REPORT_DATE}})
           # Literal body:
    
           # Read file contents as body:
