@@ -28,7 +28,7 @@ jobs:
     - name: Run a one-line script
       run: bash ./weather.sh
     - name: Set Timezone
-      uses: actions/set-timezone-action@v1.0
+      uses: szenius/set-timezone@v1.0
       with:
         timezoneLinux: "Asia/Singapore"
     
