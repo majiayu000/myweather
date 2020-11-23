@@ -27,8 +27,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: bash ./weather.sh
+    - name: Set Timezone
+      uses: actions/set-timezone-action@v1.1
+      with:
+        timezoneLinux: "Asia/Singapore"
     
-
     - name: Get current time
       uses: gerred/actions/current-time@master
       id: current-time
@@ -44,7 +47,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }}
-          subject: HeBei Weather Report (${{steps.datee.REPORT_DAT}})
+          subject: HeBei Weather Report (${{env.REPORT_DATE}})
           # Literal body:
    
           # Read file contents as body:
