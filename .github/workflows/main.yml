@@ -44,7 +44,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.USERNAME }} 
           password: ${{ secrets.PASSWORD }}
-          subject: HeBei Weather Report (${{steps.datee.outputs.REPORT_DAT}})
+          subject: HeBei Weather Report (${{steps.datee.REPORT_DAT}})
           # Literal body:
    
           # Read file contents as body:
