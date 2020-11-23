@@ -33,6 +33,8 @@ jobs:
       run: echo "REPORT_DATE=$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')" >> $GITHUB_ENV
     - name: 'Send mail'
       uses: dawidd6/action-send-mail@v2.2.3
+      env:
+        REPORT_DATE: $(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')
       with:
           server_address: smtp.gmail.com
           server_port: 587
